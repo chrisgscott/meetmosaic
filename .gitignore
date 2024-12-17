@@ -31,7 +31,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel
@@ -39,3 +38,71 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+backend/venv/
+venv/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets and sensitive data
+*.env
+*.pem
+*.key
+*secret*
+config.local.js
+config.local.json
+*.credentials.json
+.credentials/
+credentials/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# Cache and temporary files
+.cache/
+.tmp/
+tmp/
+.ipynb_checkpoints/
+*.swp
+*.bak
+*~
+
+# Build and compiled files
+dist/
+build/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.dll
+*.class
+
+# Large media and data files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.csv
+*.xls
+*.xlsx
+*.pdf
+data/
+uploads/
+downloads/
