@@ -63,7 +63,6 @@ credentials/
 
 # Logs and databases
 *.log
-*.sql
 *.sqlite
 *.sqlite3
 *.db
