@@ -6,14 +6,21 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { SmtpMessage } from "../smtp-message";
 
-export default async function Signup(props: {
-  searchParams: Promise<Message>;
+export default async function Signup({
+  searchParams,
+}: {
+  searchParams: Promise<{ message?: string; error?: string }>;
 }) {
-  const searchParams = await props.searchParams;
-  if ("message" in searchParams) {
+  const params = await searchParams;
+  const messageObj: Message = {
+    message: params.message,
+    error: params.error,
+  };
+
+  if (messageObj.message || messageObj.error) {
     return (
       <div className="w-full flex-1 flex items-center h-screen sm:max-w-md justify-center gap-2 p-4">
-        <FormMessage message={searchParams} />
+        <FormMessage message={messageObj} />
       </div>
     );
   }
@@ -42,7 +49,7 @@ export default async function Signup(props: {
           <SubmitButton formAction={signUpAction} pendingText="Signing up...">
             Sign up
           </SubmitButton>
-          <FormMessage message={searchParams} />
+          <FormMessage message={messageObj} />
         </div>
       </form>
       <SmtpMessage />
